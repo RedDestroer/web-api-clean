@@ -1,0 +1,34 @@
+root = true
+
+[*]
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# ReSharper properties
+resharper_apply_auto_detected_rules = false
+
+[*.config]
+indent_style = space
+indent_size = 2
+
+[*.cs]
+# CS8618: Non-nullable property ‘PropertyName’ is uninitialized.
+dotnet_diagnostic.CS8618.severity = none
+
+# CS8600: Converting null literal or possible null value to non-nullable type.
+dotnet_diagnostic.CS8600.severity = none
+
+# CS8604: Possible null reference argument.
+dotnet_diagnostic.CS8604.severity = none
+
+# CS8765: Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
+dotnet_diagnostic.CS8765.severity = none
+
+# CS8602: Dereference of a possibly null reference.
+dotnet_diagnostic.CS8602.severity = none
+
+# CS0162: Unreachable code detected
+dotnet_diagnostic.CS0162.severity = none

@@ -1,0 +1,97 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- dev
+- feature/*
+- release/*
+- hotfix/*
+- support/*
+- main
+
+name: 'To be set later'
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '$(Build.SourcesDirectory)/WebApiClean.sln'
+  project: '$(Build.SourcesDirectory)/Src/Host/Host.csproj'
+  testProjects: '$(Build.SourcesDirectory)/Tests/**/*Tests*.csproj'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+stages:
+  - stage: Build
+    jobs:
+      - job: BuildTheProject
+        steps:
+          - task: NuGetToolInstaller@1
+            displayName: "Install nuget tools"
+
+          - task: PowerShell@2
+            displayName: 'Update version'
+            inputs:
+              filePath: ./Build/git-get-version.ps1
+              failOnStderr: true
+
+          - task: PowerShell@2
+            displayName: 'Environment variables list'
+            inputs:
+              targetType: inline
+              script: 'dir env:'
+              failOnStderr: true
+          
+          - task: PowerShell@2
+            displayName: Set the name of the build
+            inputs:
+              targetType: inline
+              script: |
+                Write-Host "##vso[build.updatebuildnumber]$(semVer)"
+
+          - task: UseDotNet@2
+            displayName: 'Use .Net Core 3.1.x'
+            inputs:
+              version: '3.1.x'
+              packageType: runtime
+
+          - task: NuGetCommand@2
+            displayName: 'Resore nuget packages'
+            inputs:
+              restoreSolution: '$(solution)'
+
+          - task: DotNetCoreCLI@2
+            displayName: 'Build the project'
+            inputs:
+              command: 'build'
+              arguments: '--configuration $(buildConfiguration)'
+              projects: '$(project)'
+
+          - task: DotNetCoreCLI@2
+            displayName: 'Build the project tests'
+            inputs:
+              command: 'build'
+              arguments: '--configuration $(buildConfiguration)'
+              projects: '$(testProject)'
+          
+          - task: DotNetCoreCLI@2
+            displayName: 'Run unit tests'
+            inputs:
+              command: 'test'
+              arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura'
+              publishTestResults: true
+              projects: '$(testProjects)'
+
+          - task: PublishCodeCoverageResults@1
+            displayName: 'Publish code coverage results'
+            inputs:
+              codeCoverageTool: 'Cobertura'
+              summaryFileLocation: '**/*coverage.cobertura.xml'
+
+          #- task: codecoveragecomparerbt@1
+          #  displayName: 'Code coverage comparer'
+          #  inputs:
+          #    codecoveragetarget: '80'
+          #    codecoveragemeasurementmethod: 'Blocks'

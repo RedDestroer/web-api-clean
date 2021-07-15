@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>WebApiClean.Infrastructure.Interfaces</AssemblyName>
+    <RootNamespace>WebApiClean.Infrastructure.Interfaces</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Services.Interfaces\Domain.Services.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

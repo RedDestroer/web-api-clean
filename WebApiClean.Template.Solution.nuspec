@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>WebApiClean.Template.Solution</id>
+    <version>1.0.0</version>
+    <description>
+      Solution template for creating a .NET Core solution for WebApi service with a clean architecture.
+    </description>
+    <authors>Sergei Iakovlev</authors>
+    <license type="expression">Apache-2.0</license>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+  <files>
+    <file src="**\*.*" exclude="**\bin\**\*.*;**\obj\**\*.*;.git\**\*.*;.vs\**\*.*;.template.config\**\*.*" target="Content" />
+  </files>  
+</package>
