@@ -1,17 +1,15 @@
-﻿using WebApiClean.Domain.Common;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using WebApiClean.Domain.Common;
 
-namespace WebApiClean.Domain
+namespace WebApiClean.Domain.ServiceResult
 {
     [ExcludeFromCodeCoverage]
     public class ServiceError : ValueObject, IServiceError
     {
-        /// <inheritdoc />
         public ServiceErrorCode ErrorCode { get; }
 
-        /// <inheritdoc />
         public string Message { get; }
 
         private ServiceError(ServiceErrorCode errorCode, string message)
@@ -39,7 +37,6 @@ namespace WebApiClean.Domain
         public override int GetHashCode() =>
             base.GetHashCode();
 
-        /// <inheritdoc />
         protected override IEnumerable<object> GetAtomicValues()
         {
             yield return ErrorCode;

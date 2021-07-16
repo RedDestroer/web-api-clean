@@ -1,9 +1,9 @@
 ﻿using WebApiClean.Application.Services.Interfaces;
 using WebApiClean.Controllers.ActionResults;
-using WebApiClean.Domain;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using WebApiClean.Domain.ServiceResult;
 
 namespace WebApiClean.Controllers
 {

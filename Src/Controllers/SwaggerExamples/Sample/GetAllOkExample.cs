@@ -1,5 +1,4 @@
 ﻿using WebApiClean.Application.Models.Sample;
-using WebApiClean.Application.Samples.Queries.Sample;
 using Swashbuckle.AspNetCore.Filters;
 using System.Diagnostics.CodeAnalysis;
 

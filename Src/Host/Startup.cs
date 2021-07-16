@@ -4,7 +4,6 @@ using WebApiClean.Controllers;
 using WebApiClean.Controllers.Filters;
 using WebApiClean.Controllers.SwaggerExamples;
 using WebApiClean.Domain;
-using WebApiClean.Domain.Extensions;
 using WebApiClean.Domain.Services;
 using WebApiClean.Host.Extensions;
 using WebApiClean.Host.Formatters;
@@ -33,6 +32,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Web;
+using WebApiClean.Common.Extensions;
 
 namespace WebApiClean.Host
 {

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApiClean.Domain
+namespace WebApiClean.Domain.ServiceResult
 {
     [Serializable]
     public class FailureResponse

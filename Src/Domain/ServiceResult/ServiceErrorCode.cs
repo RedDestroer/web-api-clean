@@ -1,6 +1,6 @@
 ﻿// ReSharper disable InconsistentNaming
 
-namespace WebApiClean.Domain
+namespace WebApiClean.Domain.ServiceResult
 {
     public enum ServiceErrorCode
     {

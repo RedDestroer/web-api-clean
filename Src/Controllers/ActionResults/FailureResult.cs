@@ -1,8 +1,8 @@
-﻿using WebApiClean.Domain;
-using WebApiClean.Domain.Extensions;
+﻿using WebApiClean.Domain.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Threading.Tasks;
+using WebApiClean.Domain.ServiceResult;
 
 namespace WebApiClean.Controllers.ActionResults
 {

@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WebApiClean.Domain
+namespace WebApiClean.Common
 {
     [ExcludeFromCodeCoverage]
     public static class AsyncHelper

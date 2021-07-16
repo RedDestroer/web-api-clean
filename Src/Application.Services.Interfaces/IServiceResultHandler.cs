@@ -1,5 +1,5 @@
-﻿using WebApiClean.Domain;
-using System.Net;
+﻿using System.Net;
+using WebApiClean.Domain.ServiceResult;
 
 namespace WebApiClean.Application.Services.Interfaces
 {

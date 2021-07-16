@@ -8,8 +8,6 @@ namespace WebApiClean.Application.Services
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddSingleton<IServiceResultHandler, ServiceResultHandler>();
-            //services.AddSingleton<ICacheProvider, >();
-            services.AddSingleton<ICache, Cache>(); // NoCache
 
             return services;
         }

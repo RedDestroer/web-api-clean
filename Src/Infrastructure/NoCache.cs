@@ -1,9 +1,9 @@
-﻿using WebApiClean.Application.Services.Interfaces;
-using System;
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using WebApiClean.Infrastructure.Interfaces;
 
-namespace WebApiClean.Application.Services
+namespace WebApiClean.Infrastructure
 {
     [ExcludeFromCodeCoverage]
     public class NoCache : ICache

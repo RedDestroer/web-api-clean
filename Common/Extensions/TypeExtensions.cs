@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace WebApiClean.Domain.Extensions
+namespace WebApiClean.Common.Extensions
 {
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class TypeExtensions

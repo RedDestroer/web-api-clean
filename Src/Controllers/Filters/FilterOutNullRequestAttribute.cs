@@ -1,9 +1,9 @@
-﻿using WebApiClean.Domain;
-using WebApiClean.Domain.Exceptions;
+﻿using WebApiClean.Domain.Exceptions;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApiClean.Domain.ServiceResult;
 
 namespace WebApiClean.Controllers.Filters
 {

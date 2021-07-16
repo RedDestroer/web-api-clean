@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using WebApiClean.Domain.ServiceResult;
 
 namespace WebApiClean.Domain.Exceptions
 {
@@ -8,7 +9,7 @@ namespace WebApiClean.Domain.Exceptions
     public sealed class ServiceErrorException : DomainException
     {
         public ServiceErrorException()
-            : this(Domain.ServiceError.UnknownError())
+            : this(ServiceResult.ServiceError.UnknownError())
         {
         }
 
@@ -18,7 +19,7 @@ namespace WebApiClean.Domain.Exceptions
             Data[nameof(ServiceError)] = serviceError;
         }
 
-        public ServiceErrorException(IServiceError serviceError) : base(serviceError?.Message ?? Domain.ServiceError.UnknownError().Message)
+        public ServiceErrorException(IServiceError serviceError) : base(serviceError?.Message ?? ServiceResult.ServiceError.UnknownError().Message)
         {
             ServiceError = serviceError;
             Data[nameof(ServiceError)] = serviceError;
@@ -30,7 +31,7 @@ namespace WebApiClean.Domain.Exceptions
             Data[nameof(ServiceError)] = serviceError;
         }
 
-        public ServiceErrorException(IServiceError serviceError, Exception inner) : base(serviceError?.Message ?? Domain.ServiceError.UnknownError().Message, inner)
+        public ServiceErrorException(IServiceError serviceError, Exception inner) : base(serviceError?.Message ?? ServiceResult.ServiceError.UnknownError().Message, inner)
         {
             ServiceError = serviceError;
             Data[nameof(ServiceError)] = serviceError;

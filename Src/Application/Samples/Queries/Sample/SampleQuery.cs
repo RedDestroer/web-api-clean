@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using WebApiClean.Application.Models.Sample;
-using WebApiClean.Domain.Extensions;
 using WebApiClean.Domain.Services.Interfaces.Mapping;
 using MediatR;
+using WebApiClean.Common.Extensions;
 
 namespace WebApiClean.Application.Samples.Queries.Sample
 {

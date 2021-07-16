@@ -1,4 +1,4 @@
-﻿namespace WebApiClean.Domain
+﻿namespace WebApiClean.Domain.ServiceResult
 {
     public interface IServiceError
     {

@@ -1,11 +1,11 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Sergei Iakovlev",
-  "classifications": ["Web","Solution"],
-  "name": "WebApp with a clean architecture",
-  "shortName": "WebApiCleanv1",
-  "defaultName": "WebApiCleanArch",
-  "identity": "Destro.WebApiCleanArch.V1.CSharp",
+  "classifications": ["Web", "WebAPI","Solution"],
+  "name": "WebAPI with a clean architecture",
+  "shortName": "webapiclean",
+  "defaultName": "WebApi",
+  "identity": "Iakovlev.WebApiCleanArch.V1.CSharp",
   "tags": {
     "language": "C#",
     "type": "solution"
@@ -28,7 +28,8 @@
     "4E66B6A4-2F30-4B69-B4F0-D7A3FDAC2D16",
     "ED915C3D-41F9-45AE-8104-5956ACB6D1D6",
     "16FB158B-7B07-4089-B78F-ADB63B5B65EC",
-    "49BA25B4-D99B-4A82-9CF0-47D368B2DF64"
+    "49BA25B4-D99B-4A82-9CF0-47D368B2DF64",
+    "F7526B39-F0EE-4E94-AB21-4E6B0663BC43"
   ],
   "symbols": {
     "Framework": {

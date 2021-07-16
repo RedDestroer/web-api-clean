@@ -25,7 +25,6 @@ namespace WebApiClean.Infrastructure.Mapping
                 Assembly.GetExecutingAssembly(),
             });
 
-        /// <inheritdoc />
         public override string ProfileName => typeof(AutoMapperProfile).FullName;
 
         private static void LoadConverters()

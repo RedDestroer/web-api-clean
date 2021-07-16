@@ -1,11 +1,11 @@
-﻿using WebApiClean.Application.Services.Interfaces;
-using WebApiClean.Domain;
-using Serilog;
+﻿using Serilog;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using WebApiClean.Common;
+using WebApiClean.Infrastructure.Interfaces;
 
-namespace WebApiClean.Application.Services
+namespace WebApiClean.Infrastructure
 {
     public class Cache : ICache
     {

@@ -11,6 +11,7 @@ using System;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using WebApiClean.Domain.ServiceResult;
 
 namespace WebApiClean.Host.Middleware
 {

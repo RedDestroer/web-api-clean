@@ -3,7 +3,6 @@ using WebApiClean.Application.Models.Sample;
 using WebApiClean.Application.Samples.Queries.Sample;
 using WebApiClean.Controllers.SwaggerExamples;
 using WebApiClean.Controllers.SwaggerExamples.Sample;
-using WebApiClean.Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +11,7 @@ using Swashbuckle.AspNetCore.Filters;
 using System.Net.Mime;
 using System.Threading;
 using System.Threading.Tasks;
+using WebApiClean.Domain.ServiceResult;
 
 namespace WebApiClean.Controllers
 {

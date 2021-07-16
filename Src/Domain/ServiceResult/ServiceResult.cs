@@ -1,6 +1,6 @@
 ﻿using WebApiClean.Domain.Exceptions;
 
-namespace WebApiClean.Domain
+namespace WebApiClean.Domain.ServiceResult
 {
     public static class ServiceResult
     {

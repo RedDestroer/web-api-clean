@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using WebApiClean.Infrastructure.Mapping;
 using System;
+using WebApiClean.Domain.ServiceResult;
 
 namespace WebApiClean.Host.Mapping
 {
@@ -8,7 +9,7 @@ namespace WebApiClean.Host.Mapping
     {
         private static readonly Lazy<Profile> _autoProfile = new Lazy<Profile>(
             () => AutoMapperProfile.Initialize(
-                typeof(Domain.IServiceError).Assembly, // Domain
+                typeof(IServiceError).Assembly, // Domain
                 typeof(Domain.Services.DependencyInjection).Assembly, // Domain Services
                 typeof(Domain.Services.Interfaces.Mapping.IHaveCustomMapping).Assembly, // Domain Services Interfaces
                 typeof(Application.DependencyInjection).Assembly, // Application

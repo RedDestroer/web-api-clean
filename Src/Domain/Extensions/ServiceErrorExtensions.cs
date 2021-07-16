@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using WebApiClean.Domain.ServiceResult;
 
 namespace WebApiClean.Domain.Extensions
 {

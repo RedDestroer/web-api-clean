@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WebApiClean.Domain
+namespace WebApiClean.Domain.ServiceResult
 {
     public class ResponseWithWarnings
     {

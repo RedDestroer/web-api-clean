@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace WebApiClean.Application.Services.Interfaces
+namespace WebApiClean.Infrastructure.Interfaces
 {
     public interface ICacheProvider
     {

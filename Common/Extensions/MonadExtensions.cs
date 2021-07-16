@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 
-namespace WebApiClean.Domain.Extensions
+namespace WebApiClean.Common.Extensions
 {
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class MonadExtensions
