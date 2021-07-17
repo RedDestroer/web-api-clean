@@ -9,7 +9,6 @@ enforcing the principles of clean architecture inside new solution.
 ## Technologies
 
 * ASP.NET Core 3.1
-* [Entity Framework Core 3.1](https://docs.microsoft.com/en-us/ef/core/)
 * [MediatR](https://github.com/jbogard/MediatR)
 * [AutoMapper](https://automapper.org/)
 * [FluentValidation](https://fluentvalidation.net/)
