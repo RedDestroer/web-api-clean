@@ -58,6 +58,8 @@ https://github.com/dotnet/templating/wiki/Reference-for-template.json
 
 https://github.com/sayedihashimi/template-sample
 
+https://github.com/JasonTaylorDev/CleanArchitecture
+
 # Denis & Andrei videos about clean architecture
 
 https://www.youtube.com/watch?v=GRURPkkEjMk
