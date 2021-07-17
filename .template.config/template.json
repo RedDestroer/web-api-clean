@@ -8,7 +8,7 @@
   "identity": "Iakovlev.WebApiCleanArch.V1.CSharp",
   "tags": {
     "language": "C#",
-    "type": "solution"
+    "type": "project"
   },
   "sourceName": "WebApiClean",
   "preferNameDirectory": true,
@@ -103,11 +103,12 @@
             "**/.git/**",
             "**/.vscode/**",
             "**/.vs/**",
-            "**/.DS_Store/**"
+            "**/.DS_Store/**",
+            "**/**/*.[Ll]og.*.json"
           ]
         }
       ]
     }
   ],
-  "exclude": ["**/[Bb]in/**", "**/[Oo]bj/**", ".template.config/**/*", "**/*.[Ll]og.*.json"]
+  "exclude": ["**/[Bb]in/**", "**/[Oo]bj/**", ".template.config/**/*", "**/**/*.[Ll]og.*.json"]
 }

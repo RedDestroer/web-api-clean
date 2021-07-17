@@ -65,7 +65,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{FF0C270D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 Utils", "0 Utils", "{7F78DA15-0F45-45E1-860D-7F5F4723F887}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{F7526B39-F0EE-4E94-AB21-4E6B0663BC43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Src\Common\Common.csproj", "{F7526B39-F0EE-4E94-AB21-4E6B0663BC43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
