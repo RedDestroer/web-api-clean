@@ -12,7 +12,7 @@ enforcing the principles of clean architecture inside new solution.
 * [MediatR](https://github.com/jbogard/MediatR)
 * [AutoMapper](https://automapper.org/)
 * [FluentValidation](https://fluentvalidation.net/)
-* [Polly] (https://www.nuget.org/packages/Microsoft.Extensions.Http.Polly/)
+* [Polly](https://www.nuget.org/packages/Microsoft.Extensions.Http.Polly/)
 * [NUnit](https://nunit.org/), [FluentAssertions](https://fluentassertions.com/), [Moq](https://github.com/moq)
 * [Serilog](https://serilog.net/), [Destructurama.ByIgnoring](https://www.nuget.org/packages/Destructurama.ByIgnoring/)
 * [Swagger(Swashbuckle)](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-3.1)
