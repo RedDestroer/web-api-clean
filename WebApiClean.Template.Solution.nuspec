@@ -2,13 +2,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>WebApiClean.Template.Solution</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <language>en-US</language>
+    <title>Clean Architecture Solution Template</title>
     <description>
       Solution template for creating a .NET Core 3.1 solution for WebApi service with a clean architecture.
     </description>
     <authors>Sergei Iakovlev</authors>
+    <owners>Sergei Iakovlev</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">Apache-2.0</license>
+    <icon>images\icon.png</icon>
     <projectUrl>https://github.com/RedDestroer/web-api-clean</projectUrl>
     <repository type="git" url="https://github.com/RedDestroer/web-api-clean.git" branch="main"/>
     <packageTypes>
@@ -18,6 +22,8 @@
     <tags>clean-architecture solution template csharp dotnet web web-api</tags>
   </metadata>
   <files>
-    <file src="**\*.*" exclude="**\bin\**\*.*;**\obj\**\*.*;.git\**\*.*;.vs\**\*.*;.template.config\**\*.*;**\**\*.Log.*.json;**\**\*.log.*.json" target="Content" />
+    <file src="**\*.*" exclude="**\bin\**\*.*;**\obj\**\*.*;.git\**\*.*;.vs\**\*.*;**\**\*.Log.*.json;**\**\*.log.*.json;README.md" target="content" />
+    <file src=".template.config\icon.png" target="images" />
+    <file src=".template.config\README.md" target="content" />
   </files>  
 </package>

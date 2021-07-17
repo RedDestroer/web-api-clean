@@ -1,9 +1,22 @@
 # Web API Clean Architecture Solution Template
 
-[![WebApiClean.Template.Solution NuGet Package](https://img.shields.io/badge/nuget-1.0.2-blue)](https://www.nuget.org/packages/WebApiClean.Template.Solution)
+[![WebApiClean.Template.Solution NuGet Package](https://img.shields.io/badge/nuget-1.0.3-blue)](https://www.nuget.org/packages/WebApiClean.Template.Solution)
 
 This is the reference template of web API service based on .NET Core 3.1.
-It takes a lot of time just to prepare fresh solution for new web api service. This template will save you some time at a start phase along with enforcing the principles of clean architecture inside new solution.
+It takes a lot of time just to prepare fresh solution for new web api service. This template will save you some time at a start phase along with 
+enforcing the principles of clean architecture inside new solution.
+
+## Technologies
+
+* ASP.NET Core 3.1
+* [Entity Framework Core 3.1](https://docs.microsoft.com/en-us/ef/core/)
+* [MediatR](https://github.com/jbogard/MediatR)
+* [AutoMapper](https://automapper.org/)
+* [FluentValidation](https://fluentvalidation.net/)
+* [Polly] (https://www.nuget.org/packages/Microsoft.Extensions.Http.Polly/)
+* [NUnit](https://nunit.org/), [FluentAssertions](https://fluentassertions.com/), [Moq](https://github.com/moq)
+* [Serilog](https://serilog.net/), [Destructurama.ByIgnoring](https://www.nuget.org/packages/Destructurama.ByIgnoring/)
+* [Swagger(Swashbuckle)](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-3.1)
 
 # How to use
 
@@ -13,22 +26,11 @@ There are three different ways how to use this template
 2) Fork or download & use `dotnet new` to generate and install template locally
 3) Fork or download & rename
 
-## Technologies
-
-* ASP.NET Core 3.1
-* [Entity Framework Core 3.1](https://docs.microsoft.com/en-us/ef/core/)
-* [MediatR](https://github.com/jbogard/MediatR)
-* [AutoMapper](https://automapper.org/)
-* [FluentValidation](https://fluentvalidation.net/)
-* [NUnit](https://nunit.org/), [FluentAssertions](https://fluentassertions.com/), [Moq](https://github.com/moq)
-
 ## Install template from nuget package
 
-The easiest way to get started is to install the [NuGet package](https://www.nuget.org/packages/WebApiClean.Template.Solution) nuget package.
+The easiest way to get started is to install the [WebApiClean.Template.Solution](https://www.nuget.org/packages/WebApiClean.Template.Solution) nuget package.
 
-It is reported that sometimes it doesn't work without any visible reasons. You can use second option if this is the case.
-
-Use this command to install a new template:
+Use this command to install a new template on your local machine:
 `dotnet new --install WebApiClean.Template.Solution`
 
 Use this command to generate fresh solution from the template:
@@ -38,7 +40,7 @@ Use this command to generate fresh solution from the template:
 
 Download source code as zip and unzip it somewhere at your hard drive or fork & clone sources.
 
-Use this command to install a new template:
+Use this command to install a new template on your local machine:
 `dotnet new --install path_to_the_sources_root`
 
 Use this command to generate fresh solution from the template:
