@@ -5,6 +5,7 @@
     <AssemblyName>WebApiClean.Application</AssemblyName>
     <RootNamespace>WebApiClean.Application</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>

@@ -7,6 +7,7 @@
     <AssemblyName>WebApiClean.Host</AssemblyName>
     <RootNamespace>WebApiClean.Host</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>
