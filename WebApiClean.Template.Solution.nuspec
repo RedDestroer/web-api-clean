@@ -2,12 +2,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>WebApiClean.Template.Solution</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <language>en-US</language>
     <title>Clean Architecture Solution Template</title>
     <description>
       Solution template for creating a .NET Core 3.1 solution for WebApi service with a clean architecture.
     </description>
+    <releaseNotes>
+- Added automatic swagger update based upon FluentValidator's
+
+- Some minor refactorings
+    </releaseNotes>
     <authors>Sergei Iakovlev</authors>
     <owners>Sergei Iakovlev</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
