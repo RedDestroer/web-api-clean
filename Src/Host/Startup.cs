@@ -8,6 +8,7 @@ using WebApiClean.Host.Formatters;
 using WebApiClean.Host.HealthCheck;
 using WebApiClean.Infrastructure;
 using FluentValidation.AspNetCore;
+using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -46,7 +47,7 @@ namespace WebApiClean.Host
             services.AddAutoMapper();
             services.AddSerilogLogger();
             services.AddRetryEnabledHttpClient();
-            services.AddSwagger();
+            services.AddHttpContextAccessor();
 
             services.AddControllers(
                     options =>
@@ -72,6 +73,9 @@ namespace WebApiClean.Host
                     options.DisableDataAnnotationsValidation = true;
                     options.ImplicitlyValidateRootCollectionElements = true;
                 });
+
+            services.AddSwagger();
+            services.AddFluentValidationRulesToSwagger();
 
             services.Configure<ApiBehaviorOptions>(
                 options =>
