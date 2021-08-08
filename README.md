@@ -1,6 +1,6 @@
 # Web API Clean Architecture Solution Template
 
-[![WebApiClean.Template.Solution NuGet Package](https://img.shields.io/badge/nuget-1.0.4-blue)](https://www.nuget.org/packages/WebApiClean.Template.Solution)
+[![WebApiClean.Template.Solution NuGet Package](https://img.shields.io/badge/nuget-1.0.5-blue)](https://www.nuget.org/packages/WebApiClean.Template.Solution)
 [![NuGet](https://img.shields.io/nuget/dt/WebApiClean.Template.Solution.svg)](https://www.nuget.org/packages/WebApiClean.Template.Solution)
 
 This is the reference template of web API service based on .NET Core 3.1.

@@ -44,7 +44,7 @@ namespace WebApiClean.Host
             }
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args, IConfiguration configuration) =>
+        private static IHostBuilder CreateHostBuilder(string[] args, IConfiguration configuration) =>
             Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder(args)
                 .ConfigureLogging((context, logging) =>
                 {

@@ -13,7 +13,7 @@ namespace WebApiClean.Application
             services.AddMediatR(typeof(DependencyInjection).Assembly);
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
-            services.AddDiagConfig(provider => provider.WithConfiguration(configuration));
+            services.AddAppConfig(provider => provider.WithConfiguration(configuration));
 
             return services;
         }

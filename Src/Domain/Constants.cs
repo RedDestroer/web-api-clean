@@ -16,5 +16,10 @@
         {
             public const string CorrelationId = "CorrelationId";
         }
+
+        public static class CorsProfiles
+        {
+            public const string AllowOrigin = "AllowOrigin";
+        }
     }
 }

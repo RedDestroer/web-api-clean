@@ -21,6 +21,8 @@ using Microsoft.Extensions.Hosting;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using WebApiClean.Application.Config;
+using WebApiClean.Domain;
 
 namespace WebApiClean.Host
 {
@@ -32,10 +34,15 @@ namespace WebApiClean.Host
         {
             Configuration = configuration;
             Environment = environment;
+
+            AppConfig = new AppConfigProvider()
+                .WithConfiguration(configuration)
+                .GetInstance();
         }
 
         public IConfiguration Configuration { get; }
         public IWebHostEnvironment Environment { get; }
+        public IAppConfig AppConfig { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -48,6 +55,9 @@ namespace WebApiClean.Host
             services.AddSerilogLogger();
             services.AddRetryEnabledHttpClient();
             services.AddHttpContextAccessor();
+
+            if (AppConfig.ShouldEnableCors())
+                services.EnableCors(AppConfig.AllowedOrigins);
 
             services.AddControllers(
                     options =>
@@ -108,6 +118,9 @@ namespace WebApiClean.Host
             app.UseContentSecurityPolicy();
             app.UseHttpsRedirection();
             app.UseRouting();
+
+            if (AppConfig.ShouldEnableCors())
+                app.UseCors(Constants.CorsProfiles.AllowOrigin);
 
             app.UseHealthChecks(
                 "/health",

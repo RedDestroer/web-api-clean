@@ -6,6 +6,7 @@ using Serilog;
 using Swashbuckle.AspNetCore.Filters;
 using System;
 using System.IO;
+using System.Linq;
 using WebApiClean.Controllers.SwaggerExamples;
 using WebApiClean.Domain;
 using WebApiClean.Host.Mapping;
@@ -89,6 +90,31 @@ namespace WebApiClean.Host.Extensions
                     IncludeIfExists("WebApiClean.Host.xml");
                 });
             services.AddSwaggerExamplesFromAssemblies(typeof(InternalServerErrorExample).Assembly);
+        }
+
+        public static void EnableCors(this IServiceCollection services, string[] allowedOrigins)
+        {
+            if (services == null)
+                throw new ArgumentNullException(nameof(services));
+            if (allowedOrigins == null)
+                throw new ArgumentNullException(nameof(allowedOrigins));
+
+            bool IsOriginAllowed(string origin)
+            {
+                var originUri = new UriBuilder(origin);
+
+                return allowedOrigins.Any(allowedOrigin => allowedOrigin == originUri.Host);
+            }
+
+            services.AddCors(
+                options =>
+                {
+                    options.AddPolicy(Constants.CorsProfiles.AllowOrigin,
+                        config => config
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .SetIsOriginAllowed(IsOriginAllowed));
+                });
         }
     }
 }

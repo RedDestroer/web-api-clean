@@ -5,14 +5,15 @@ namespace WebApiClean.Application.Config
 {
     public static class ConfigExtensions
     {
-        public static IDiagConfig AddDiagConfig(this IServiceCollection serviceCollection, Action<DiagConfigProvider> providerAction)
+        public static IAppConfig AddAppConfig(this IServiceCollection serviceCollection, Action<AppConfigProvider> providerAction)
         {
-            var provider = new DiagConfigProvider();
+            var provider = new AppConfigProvider();
             providerAction?.Invoke(provider);
 
             var config = provider.GetInstance();
-            serviceCollection.AddSingleton<IDiagConfig>(config);
-            serviceCollection.AddSingleton<IPerformanceConfig>(config.Performance);
+            serviceCollection.AddSingleton<IAppConfig>(config);
+            serviceCollection.AddSingleton<IDiagConfig>(config.Diag);
+            serviceCollection.AddSingleton<IPerformanceConfig>(config.Diag.Performance);
 
             return config;
         }
