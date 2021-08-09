@@ -16,6 +16,7 @@ using WebApiClean.Domain.ServiceResult;
 namespace WebApiClean.Controllers
 {
     [ApiController]
+    [Route("api")]
     public class SampleController : BaseController
     {
         private readonly IMapper _mapper;
@@ -28,14 +29,19 @@ namespace WebApiClean.Controllers
         /// <summary>
         /// Sample request.
         /// </summary>
-        [HttpPost]
+        [HttpPost("sample/getall")]
         [AllowAnonymous]
         [Consumes(MediaTypeNames.Application.Json)]
         [Produces(MediaTypeNames.Application.Json, Type = typeof(GetAllSampleResponse))]
+        [SwaggerOperation(
+            Summary = "Sample request",
+            Description = "Sample request description",
+            OperationId = OperationIds.Sample.Get)
+        ]
         [SwaggerRequestExample(typeof(GetAllSampleRequest), typeof(GetAllSampleRequestExample))]
         [SwaggerResponse(StatusCodes.Status200OK, "When all is OK.", typeof(GetAllSampleResponse))]
         [SwaggerResponseExample(StatusCodes.Status200OK, typeof(GetAllOkExample))]
-        [SwaggerResponse(StatusCodes.Status400BadRequest, "When request is invalid.\r\nWhen operation is cancelled.", typeof(FailureResponse))]
+        [SwaggerResponse(StatusCodes.Status400BadRequest, "When request is invalid.\r\n\r\nWhen operation is cancelled.", typeof(FailureResponse))]
         [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(GetAllBadRequestExample))]
         [SwaggerResponse(StatusCodes.Status500InternalServerError, "In case of internal exception.", typeof(FailureResponse))]
         [SwaggerResponseExample(StatusCodes.Status500InternalServerError, typeof(InternalServerErrorExample))]

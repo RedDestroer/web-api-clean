@@ -10,6 +10,7 @@
     </description>
     <releaseNotes>
 - Added CORS
+- Minor swagger tweaks
 - Some minor refactorings
     </releaseNotes>
     <authors>Sergei Iakovlev</authors>
