@@ -5,13 +5,13 @@ using WebApiClean.Domain.Exceptions;
 using WebApiClean.Domain.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Hosting;
 using Serilog;
 using System;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using WebApiClean.Domain.ServiceResult;
+using WebApiClean.Host.Extensions;
 
 namespace WebApiClean.Host.Middleware
 {
@@ -33,7 +33,7 @@ namespace WebApiClean.Host.Middleware
 
         public async Task Invoke(HttpContext context)
         {
-            if (_environment.IsDevelopment() || _environment.EnvironmentName == "Local")
+            if (_environment.IsDevelopmentOrLocal())
             {
                 var values = context.Request.Headers["Accept"];
                 if (values.Any(o => o == "text/html"))

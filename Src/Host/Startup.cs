@@ -104,7 +104,7 @@ namespace WebApiClean.Host
         {
             app.UseCurrentRequestContext();
 
-            if (Environment.IsDevelopment() || Environment.IsLocal())
+            if (Environment.IsDevelopmentOrLocal())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseRegisteredServicesPage(_services);
@@ -112,7 +112,7 @@ namespace WebApiClean.Host
 
             app.UseCustomExceptionHandler();
 
-            if (Environment.IsDevelopment() || Environment.IsLocal() || Environment.IsStaging())
+            if (Environment.IsDevelopmentOrLocal() || Environment.IsStaging())
                 app.EnableSwagger();
 
             app.UseContentSecurityPolicy();

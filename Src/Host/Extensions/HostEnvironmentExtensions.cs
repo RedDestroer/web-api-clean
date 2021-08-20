@@ -12,5 +12,13 @@ namespace WebApiClean.Host.Extensions
 
             return hostEnvironment.IsEnvironment("Local");
         }
+
+        public static bool IsDevelopmentOrLocal(this IHostEnvironment hostEnvironment)
+        {
+            if (hostEnvironment == null)
+                throw new ArgumentNullException(nameof(hostEnvironment));
+
+            return hostEnvironment.IsDevelopment() || hostEnvironment.IsLocal();
+        }
     }
 }
