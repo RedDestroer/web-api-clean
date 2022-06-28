@@ -31,7 +31,7 @@ There are three different ways how to use this template
 The easiest way to get started is to install the [WebApiClean.Template.Solution](https://www.nuget.org/packages/WebApiClean.Template.Solution) nuget package.
 
 Use this command to install a new template on your local machine:
-`dotnet new --install WebApiClean.Template.Solution`
+`dotnet new --install WebApiClean.Template.Solution --nuget-source "https://api.nuget.org/v3/index.json"`
 
 Use this command to generate fresh solution from the template:
 `dotnet new webapiclean -o NewSolutionName`
