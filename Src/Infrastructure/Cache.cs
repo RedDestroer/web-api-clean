@@ -20,13 +20,11 @@ namespace WebApiClean.Infrastructure
 
         public T GetOrAdd<T>(string key, TimeSpan cacheTime, Func<T> addFactory) where T : class
         {
-            var result = AsyncHelper.RunSync(
-                async () =>
-                    await GetOrAddAsync(
-                            key,
-                            cacheTime,
-                            async () => await Task.FromResult(addFactory()).ConfigureAwait(false))
-                        .ConfigureAwait(false));
+            var result = AsyncUtils.RunSync(() =>
+                    GetOrAddAsync(
+                        key,
+                        cacheTime,
+                        () => Task.FromResult(addFactory())));
 
             return result;
         }
@@ -37,7 +35,7 @@ namespace WebApiClean.Infrastructure
             var value = await _cacheProvider.GetOrAddAsync(
                     key,
                     cacheTime,
-                    async () => await AddFactoryInnerAsync(addFactory, isCalled).ConfigureAwait(false))
+                    () => AddFactoryInnerAsync(addFactory, isCalled))
                 .ConfigureAwait(false);
 
             _logger.Debug(
@@ -58,7 +56,7 @@ namespace WebApiClean.Infrastructure
             var value = await _cacheProvider.SetAsync(
                     key,
                     cacheTime,
-                    async () => await AddFactoryInnerAsync(addFactory, isCalled).ConfigureAwait(false))
+                    () => AddFactoryInnerAsync(addFactory, isCalled))
                 .ConfigureAwait(false);
 
             _logger.Debug(

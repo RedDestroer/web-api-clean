@@ -19,6 +19,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using System.Net.Mime;
 using System.Text.Json;
 using System.Threading.Tasks;
 using WebApiClean.Application.Config;
@@ -81,7 +82,6 @@ namespace WebApiClean.Host
                 {
                     options.RegisterValidatorsFromAssemblyContaining<Application.Common.Exceptions.ValidationException>();
                     options.DisableDataAnnotationsValidation = true;
-                    options.ImplicitlyValidateRootCollectionElements = true;
                 });
 
             services.AddSwagger();
@@ -141,7 +141,7 @@ namespace WebApiClean.Host
 
         private static Task HealthResponseWriter(HttpContext context, HealthReport report)
         {
-            context.Response.ContentType = "application/json";
+            context.Response.ContentType = MediaTypeNames.Application.Json;
             var response = new HealthCheckModel
             {
                 Status = report.Status.ToString(),

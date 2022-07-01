@@ -20,10 +20,11 @@ namespace WebApiClean.Host.Mapping
 
         public static IMapper CreateMapper()
         {
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile(AutoProfile);
-            });
+            var config = new MapperConfiguration(
+                cfg =>
+                {
+                    cfg.AddProfile(AutoProfile);
+                });
 
             return config.CreateMapper();
         }

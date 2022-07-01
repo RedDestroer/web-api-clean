@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Net.Http.Headers;
+using System.Net.Mime;
 
 namespace WebApiClean.Host.Formatters
 {
@@ -35,8 +36,8 @@ namespace WebApiClean.Host.Formatters
 
             var contentType = context.HttpContext.Request.ContentType;
             if (string.IsNullOrEmpty(contentType)
-                || contentType == "text/plain"
-                || contentType == "application/octet-stream")
+                || contentType == MediaTypeNames.Text.Plain
+                || contentType == MediaTypeNames.Application.Octet)
             {
                 return true;
             }
@@ -55,28 +56,26 @@ namespace WebApiClean.Host.Formatters
             var request = context.HttpContext.Request;
             var contentType = context.HttpContext.Request.ContentType;
 
-            if (string.IsNullOrEmpty(contentType) || contentType == "text/plain")
+            if (string.IsNullOrEmpty(contentType) || contentType == MediaTypeNames.Text.Plain)
             {
-                using (var reader = new StreamReader(request.Body))
-                {
-                    var content = await reader.ReadToEndAsync();
+                using var reader = new StreamReader(request.Body);
+                var content = await reader.ReadToEndAsync();
 
-                    return await InputFormatterResult.SuccessAsync(content);
-                }
+                return await InputFormatterResult.SuccessAsync(content)
+                    .ConfigureAwait(false);
             }
 
-            if (contentType == "application/octet-stream")
+            if (contentType == MediaTypeNames.Application.Octet)
             {
-                using (var ms = new MemoryStream(2048))
-                {
-                    await request.Body.CopyToAsync(ms);
-                    var content = ms.ToArray();
+                using var ms = new MemoryStream(2048);
+                await request.Body.CopyToAsync(ms);
+                var content = ms.ToArray();
 
-                    return await InputFormatterResult.SuccessAsync(content);
-                }
+                return await InputFormatterResult.SuccessAsync(content)
+                    .ConfigureAwait(false);
             }
 
-            return await InputFormatterResult.FailureAsync();
+            return await InputFormatterResult.FailureAsync().ConfigureAwait(false);
         }
     }
 }

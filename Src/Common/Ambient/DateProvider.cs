@@ -26,7 +26,7 @@ namespace WebApiClean.Common.Ambient
         public abstract DateTime UtcNow();
         public abstract DateTime Today();
 
-        private class DefaultDateProvider : DateProvider
+        private sealed class DefaultDateProvider : DateProvider
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override DateTime Now() => DateTime.Now;

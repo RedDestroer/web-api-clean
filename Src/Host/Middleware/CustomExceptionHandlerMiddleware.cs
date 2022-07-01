@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Serilog;
 using System;
 using System.Linq;
+using System.Net.Mime;
 using System.Text.Json;
 using System.Threading.Tasks;
 using WebApiClean.Domain.ServiceResult;
@@ -36,7 +37,7 @@ namespace WebApiClean.Host.Middleware
             if (_environment.IsDevelopmentOrLocal())
             {
                 var values = context.Request.Headers["Accept"];
-                if (values.Any(o => o == "text/html"))
+                if (values.Any(o => o == MediaTypeNames.Text.Html))
                 {
                     await _next(context);
 
@@ -57,7 +58,7 @@ namespace WebApiClean.Host.Middleware
         private Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             var logger = AddExceptionDetails(CurrentRequestContext.Current.Logger, exception);
-            logger.Error(exception, exception.Message);
+            logger.Error(exception, "Unexpected exception");
 
             var serviceError = exception switch
             {
@@ -73,7 +74,7 @@ namespace WebApiClean.Host.Middleware
             var response = serviceError.ToFailureResponse();
             var result = JsonSerializer.Serialize(response);
 
-            context.Response.ContentType = "application/json";
+            context.Response.ContentType = MediaTypeNames.Application.Json;
             context.Response.StatusCode = code;
 
             return context.Response.WriteAsync(result);

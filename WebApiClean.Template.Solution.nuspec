@@ -10,6 +10,9 @@
     </description>
     <releaseNotes>
       - Dependencies are updated
+      - .editorconfig updated
+      - Minor tweaks
+      - Type friendly names extended
     </releaseNotes>
     <authors>Sergei Iakovlev</authors>
     <owners>Sergei Iakovlev</owners>

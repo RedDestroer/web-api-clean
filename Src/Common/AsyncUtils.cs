@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace WebApiClean.Common
 {
     [ExcludeFromCodeCoverage]
-    public static class AsyncHelper
+    public static class AsyncUtils
     {
         private static readonly TaskFactory _myTaskFactory = new
             TaskFactory(CancellationToken.None,

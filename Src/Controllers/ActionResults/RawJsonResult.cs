@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mime;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace WebApiClean.Controllers.ActionResults
@@ -13,16 +15,16 @@ namespace WebApiClean.Controllers.ActionResults
 
         public string Content { get; }
 
-        public async Task ExecuteResultAsync(ActionContext context)
+        public Task ExecuteResultAsync(ActionContext context)
         {
             var result = new ContentResult
             {
                 StatusCode = StatusCodes.Status200OK,
-                ContentType = "application/json; charset=utf-8",
+                ContentType = $"{MediaTypeNames.Application.Json}; charset={Encoding.UTF8.WebName}",
                 Content = Content
             };
 
-            await result.ExecuteResultAsync(context);
+            return result.ExecuteResultAsync(context);
         }
     }
 }

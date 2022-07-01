@@ -32,7 +32,7 @@ namespace WebApiClean.Host.Extensions
             app.Map(
                 "/services",
                 builder => builder.Run(
-                    async context =>
+                    context =>
                     {
                         var sb = new StringBuilder();
                         sb.Append("<h1>Registered Services</h1>");
@@ -46,10 +46,12 @@ namespace WebApiClean.Host.Extensions
                             sb.Append($"<td>{HttpUtility.HtmlEncode(service.Lifetime)}</td>");
                             sb.Append($"<td>{HttpUtility.HtmlEncode(service.ImplementationType?.GetFriendlyName())}</td>");
                             sb.Append("</tr>");
+
                         }
 
                         sb.Append("</tbody></table>");
-                        await context.Response.WriteAsync(sb.ToString());
+
+                        return context.Response.WriteAsync(sb.ToString());
                     }));
         }
     }

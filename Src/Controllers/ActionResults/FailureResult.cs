@@ -17,7 +17,7 @@ namespace WebApiClean.Controllers.ActionResults
         public HttpStatusCode StatusCode { get; }
         public IServiceError ServiceError { get; }
 
-        public async Task ExecuteResultAsync(ActionContext context)
+        public Task ExecuteResultAsync(ActionContext context)
         {
             var response = ServiceError.ToFailureResponse();
 
@@ -26,7 +26,7 @@ namespace WebApiClean.Controllers.ActionResults
                 StatusCode = (int)StatusCode
             };
 
-            await objectResult.ExecuteResultAsync(context);
+            return objectResult.ExecuteResultAsync(context);
         }
     }
 }

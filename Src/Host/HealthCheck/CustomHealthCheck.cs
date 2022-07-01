@@ -13,7 +13,7 @@ namespace WebApiClean.Host.HealthCheck
             try
             {
                 if (DateTime.Now.Millisecond % 2 == 0)
-                    throw new Exception("Random Error Caught!");
+                    throw new InvalidOperationException("Random Error Caught!");
 
                 return Task.FromResult(HealthCheckResult.Healthy());
             }

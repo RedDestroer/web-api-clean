@@ -24,7 +24,7 @@ namespace WebApiClean.Common.Ambient
 
         public abstract Guid NewGuid();
 
-        private class DefaultGuidProvider : GuidProvider
+        private sealed class DefaultGuidProvider : GuidProvider
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override Guid NewGuid() => Guid.NewGuid();

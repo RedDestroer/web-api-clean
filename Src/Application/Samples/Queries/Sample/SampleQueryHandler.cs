@@ -25,7 +25,7 @@ namespace WebApiClean.Application.Samples.Queries.Sample
             CurrentRequestContext.Current.Logger.Information("(1) Called at {Date}", now);
             _logger.Information("(2) Called at {Date}", now);
 
-            // But is can be achieved like this
+            // But it can be achieved like this
             _logger.ForContext(Constants.LogProperties.CorrelationId, CurrentRequestContext.Current.CorrelationId)
                 .Information("(3) Called at {Date}", now);
 

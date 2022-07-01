@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 
 namespace WebApiClean.Infrastructure.Interfaces
 {
+    // Should implement actual cache provider. Redis for instance.
     public interface ICacheProvider
     {
         Task<T> GetAsync<T>(string key) where T : class;

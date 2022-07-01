@@ -19,7 +19,7 @@ namespace WebApiClean.Domain.ServiceResult
         public static IServiceResult<TResult> Failed<TResult>(IServiceError error)
             => new ServiceResultInternal<TResult>(false, error, default);
 
-        private class ServiceResultInternal<TResult> : ServiceResultInternal, IServiceResult<TResult>
+        private sealed class ServiceResultInternal<TResult> : ServiceResultInternal, IServiceResult<TResult>
         {
             private readonly TResult _resultData;
             public TResult ResultData => IsSuccess ? _resultData : ThrowException();

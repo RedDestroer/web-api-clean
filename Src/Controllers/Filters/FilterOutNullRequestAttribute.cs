@@ -10,7 +10,7 @@ namespace WebApiClean.Controllers.Filters
     [AttributeUsage(AttributeTargets.Method)]
     public class FilterOutNullRequestAttribute : Attribute, IAsyncActionFilter
     {
-        public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+        public Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
             if (!context.ModelState.IsValid)
             {
@@ -27,9 +27,12 @@ namespace WebApiClean.Controllers.Filters
                             ExceptionMessage = o.Exception?.Message,
                         }).ToArray(),
                     };
-                var failures = modelStateErrors.ToDictionary(
-                    o => o.Key,
-                    o => o.Descriptions.Select(d => d.ErrorMessage).ToArray());
+                var failures = modelStateErrors
+                    .ToDictionary(
+                        o => o.Key,
+                        o => o.Descriptions
+                            .Select(d => d.ErrorMessage)
+                            .ToArray());
 
                 var error = ServiceError.InvalidParameters.ValidationError(failures);
 
@@ -46,7 +49,7 @@ namespace WebApiClean.Controllers.Filters
                 }
             }
 
-            await next();
+            return next();
         }
 
         [Serializable]

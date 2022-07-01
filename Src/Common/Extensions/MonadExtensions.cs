@@ -17,10 +17,7 @@ namespace WebApiClean.Common.Extensions
 
         public static TResult Return<TInput, TResult>(this TInput o, [NotNull] Func<TInput, TResult> evaluator)
         {
-            if (o == null)
-                return default;
-
-            return evaluator(o);
+            return With(o, evaluator);
         }
 
         public static TResult Return<TInput, TResult>(this TInput o, [NotNull] Func<TInput, TResult> evaluator, TResult failureValue)
