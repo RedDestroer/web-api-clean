@@ -2,16 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>WebApiClean.Template.Solution</id>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <language>en-US</language>
     <title>Clean Architecture Solution Template</title>
     <description>
       Solution template for creating a .NET Core 3.1 solution for WebApi service with a clean architecture.
     </description>
     <releaseNotes>
-- Added CORS
-- Minor swagger tweaks
-- Some minor refactorings
+      - Dependencies are updated
     </releaseNotes>
     <authors>Sergei Iakovlev</authors>
     <owners>Sergei Iakovlev</owners>
@@ -30,5 +28,5 @@
     <file src="**\*.*" exclude="**\bin\**\*.*;**\obj\**\*.*;.git\**\*.*;.vs\**\*.*;**\**\*.Log.*.json;**\**\*.log.*.json;README.md" target="content" />
     <file src=".template.config\icon.png" target="images" />
     <file src=".template.config\README.md" target="content" />
-  </files>  
+  </files>
 </package>

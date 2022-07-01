@@ -139,7 +139,7 @@ namespace WebApiClean.Host
             });
         }
 
-        private static async Task HealthResponseWriter(HttpContext context, HealthReport report)
+        private static Task HealthResponseWriter(HttpContext context, HealthReport report)
         {
             context.Response.ContentType = "application/json";
             var response = new HealthCheckModel
@@ -155,7 +155,7 @@ namespace WebApiClean.Host
                 HealthCheckDuration = report.TotalDuration
             };
 
-            await context.Response.WriteAsync(JsonSerializer.Serialize(response));
+            return context.Response.WriteAsync(JsonSerializer.Serialize(response));
         }
     }
 }

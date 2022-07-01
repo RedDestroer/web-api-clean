@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace WebApiClean.Application.Common.Behaviours
 {
     public class RequestPerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+         where TRequest : IRequest<TResponse>
     {
         private readonly ILogger _logger;
         private readonly IPerformanceConfig _performanceConfig;
