@@ -2,17 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>WebApiClean.Template.Solution</id>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <language>en-US</language>
     <title>Clean Architecture Solution Template</title>
     <description>
       Solution template for creating a .NET Core 3.1 solution for WebApi service with a clean architecture.
     </description>
     <releaseNotes>
-      - Dependencies are updated
-      - .editorconfig updated
-      - Minor tweaks
-      - Type friendly names extended
+      - ReadMe is included into the package
     </releaseNotes>
     <authors>Sergei Iakovlev</authors>
     <owners>Sergei Iakovlev</owners>
@@ -24,12 +21,14 @@
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
-    <summary>WebAPI solution clean architecture template</summary>
+    <summary>WebAPI solution clean architecture template for .NET Core 3.1</summary>
     <tags>clean-architecture solution template csharp dotnet web web-api</tags>
+    <readme>docs\readme.md</readme>
   </metadata>
   <files>
-    <file src="**\*.*" exclude="**\bin\**\*.*;**\obj\**\*.*;.git\**\*.*;.vs\**\*.*;**\**\*.Log.*.json;**\**\*.log.*.json;README.md" target="content" />
-    <file src=".template.config\icon.png" target="images" />
-    <file src=".template.config\README.md" target="content" />
+    <file src="**\*.*" exclude="**\bin\**\*.*;**\obj\**\*.*;.git\**\*.*;.vs\**\*.*;**\**\*.Log.*.json;**\**\*.log.*.json;README.md" target="content\" />
+    <file src=".template.config\icon.png" target="images\" />
+    <file src=".template.config\README.md" target="content\" />
+    <file src=".template.config\README.md" target="docs\" />
   </files>
 </package>
