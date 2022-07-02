@@ -2,7 +2,7 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "Sergei Iakovlev",
   "classifications": ["Web", "WebAPI","Solution"],
-  "name": "WebAPI with a clean architecture",
+  "name": "WebAPI with a clean architecture 3.1",
   "shortName": "webapiclean",
   "defaultName": "WebApi",
   "identity": "Iakovlev.WebApiCleanArch.V1.CSharp",
