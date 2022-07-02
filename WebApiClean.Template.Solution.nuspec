@@ -23,7 +23,7 @@
     </packageTypes>
     <summary>WebAPI solution clean architecture template for .NET 5.0</summary>
     <tags>clean-architecture solution template csharp dotnet web web-api</tags>
-    <readme>docs\readme.md</readme>
+    <readme>docs\README.md</readme>
   </metadata>
   <files>
     <file src="**\*.*" exclude="**\bin\**\*.*;**\obj\**\*.*;.git\**\*.*;.vs\**\*.*;**\**\*.Log.*.json;**\**\*.log.*.json;README.md" target="content\" />
