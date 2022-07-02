@@ -1,11 +1,11 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Sergei Iakovlev",
-  "classifications": ["Web", "WebAPI","Solution"],
-  "name": "WebAPI with a clean architecture",
-  "shortName": "webapiclean",
-  "defaultName": "WebApi",
-  "identity": "Iakovlev.WebApiCleanArch.V1.CSharp",
+  "classifications": ["Web", "WebAPI", "Solution"],
+  "name": "WebAPI with a clean architecture 5.0",
+  "shortName": "webapiclean-net5",
+  "defaultName": "WebApi 5.0",
+  "identity": "Iakovlev.WebApiCleanArch.V2.CSharp",
   "tags": {
     "language": "C#",
     "type": "project"
@@ -13,23 +13,23 @@
   "sourceName": "WebApiClean",
   "preferNameDirectory": true,
   "guids": [
-    "7940E94B-DBC7-4940-A712-8E87D3740633",
-    "5A7556CF-8FA5-41D4-9421-F9EC80E5EB8A",
-    "895AB4B7-437E-470F-943C-642E12BEEA51",
-    "AECE310E-2FC9-478C-BA68-870EE8C0B56F",
-    "1B2C12D7-8378-4045-9A47-CD325AA8C4F3",
-    "D36391CF-36BE-415F-8FF0-FD49B45EA8AE",
-    "77E45335-463D-480D-B16C-B5BDA7CF6147",
-    "210A1255-1A29-4D2A-B0A3-2569530D2927",
-    "12B0BB7A-FD97-4702-B1E7-7F4C149E1A98",
-    "51A07E59-FB25-4682-BF4F-8452507587AF",
-    "E2AB4FE8-6AF8-41A4-BC93-AD011B8CCCFA",
-    "2C0A032A-BD5D-4387-AAF3-AA33343128ED",
-    "4E66B6A4-2F30-4B69-B4F0-D7A3FDAC2D16",
-    "ED915C3D-41F9-45AE-8104-5956ACB6D1D6",
-    "16FB158B-7B07-4089-B78F-ADB63B5B65EC",
-    "49BA25B4-D99B-4A82-9CF0-47D368B2DF64",
-    "F7526B39-F0EE-4E94-AB21-4E6B0663BC43"
+    "CEC60957-E611-47BC-8D11-C2A5DA99CC90",
+    "66530C41-6EE2-4FC3-A646-D27C1287CA93",
+    "F98CE5D1-C4C2-4A47-A69E-17005B9BD751",
+    "2D46DC1B-082C-46CD-B9F3-873A1A0E1139",
+    "5BCE5A49-7E3E-4E0F-B09D-B5939D3D72CB",
+    "CEDCF686-FDAC-4F61-9F6A-F7842327F264",
+    "AB72F733-309D-4D13-B0EF-EC89539E5270",
+    "2A34F30C-08B8-457E-8B5D-1D91432D41B1",
+    "7A7AE90A-D3D9-427D-9746-F9C99147E6EB",
+    "4CF60074-7A63-4BF5-9B04-81E8F705BEE2",
+    "06584F2E-F5B8-420B-8AB7-4A0747EB10E2",
+    "4FE37EAA-629A-4001-BC0D-4B9AA8644FA9",
+    "526E63A5-4EFA-4E16-A506-5F18AAD3D482",
+    "8B54A1E7-2153-4096-AE11-9CCD0BA156EA",
+    "B648E490-F743-4466-AB18-9744AAC699FF",
+    "4251B226-7C68-47C3-B0BD-7C47BBA03C6F",
+    "5E0600BD-44F9-4CEF-AE9E-F6EA6EC2AD07"
   ],
   "symbols": {
     "Framework": {
@@ -38,12 +38,12 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "netcoreapp3.1",
-          "description": "Target netcoreapp3.1"
+          "choice": "net5.0",
+          "description": "Target net5.0"
         }
       ],
-      "replaces": "netcoreapp3.1",
-      "defaultValue": "netcoreapp3.1"
+      "replaces": "net5.0",
+      "defaultValue": "net5.0"
     },
     "HttpPort": {
       "type": "parameter",

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>WebApiClean.Template.Solution</id>
-    <version>1.0.7</version>
+    <id>WebApiClean.Template.Solution.net5</id>
+    <version>1.0.0</version>
     <language>en-US</language>
-    <title>Clean Architecture Solution Template</title>
+    <title>Clean Architecture Solution Template .Net 5.0</title>
     <description>
-      Solution template for creating a .NET Core 3.1 solution for WebApi service with a clean architecture.
+      Solution template for creating a .NET 5.0 solution for WebApi service with a clean architecture.
     </description>
     <releaseNotes>
       - ReadMe is included into the package
@@ -17,11 +17,11 @@
     <license type="expression">Apache-2.0</license>
     <icon>images\icon.png</icon>
     <projectUrl>https://github.com/RedDestroer/web-api-clean</projectUrl>
-    <repository type="git" url="https://github.com/RedDestroer/web-api-clean.git" branch="main"/>
+    <repository type="git" url="https://github.com/RedDestroer/web-api-clean.git" branch="net5.0"/>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
-    <summary>WebAPI solution clean architecture template for .NET Core 3.1</summary>
+    <summary>WebAPI solution clean architecture template for .NET 5.0</summary>
     <tags>clean-architecture solution template csharp dotnet web web-api</tags>
     <readme>docs\readme.md</readme>
   </metadata>

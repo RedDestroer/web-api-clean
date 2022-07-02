@@ -52,9 +52,9 @@ stages:
                 Write-Host "##vso[build.updatebuildnumber]$(semVer)"
 
           - task: UseDotNet@2
-            displayName: 'Use .Net Core 3.1.x'
+            displayName: 'Use .Net 5.0.x'
             inputs:
-              version: '3.1.x'
+              version: '5.0.x'
               packageType: runtime
 
           - task: NuGetCommand@2

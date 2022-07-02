@@ -1,22 +1,22 @@
-# Web API Clean Architecture Solution Template
+# Web API NET 5 Clean Architecture Solution Template
 
-[![WebApiClean.Template.Solution NuGet Package](https://img.shields.io/badge/nuget-1.0.6-blue)](https://www.nuget.org/packages/WebApiClean.Template.Solution)
-[![NuGet](https://img.shields.io/nuget/dt/WebApiClean.Template.Solution.svg)](https://www.nuget.org/packages/WebApiClean.Template.Solution)
+[![WebApiClean.Template.Solution.net5 NuGet Package](https://img.shields.io/badge/nuget-1.0.0-blue)](https://www.nuget.org/packages/WebApiClean.Template.Solution.net5)
+[![NuGet](https://img.shields.io/nuget/dt/WebApiClean.Template.Solution.net5.svg)](https://www.nuget.org/packages/WebApiClean.Template.Solution.net5)
 
-This is the reference template of web API service based on .NET Core 3.1.
+This is the reference template of web API service based on .NET 5.0.
 It takes a lot of time just to prepare fresh solution for new web api service. This template will save you some time at a start phase along with
 enforcing the principles of clean architecture inside new solution.
 
 ## Technologies
 
-* ASP.NET Core 3.1
+* .NET 5.0
 * [MediatR](https://github.com/jbogard/MediatR)
 * [AutoMapper](https://automapper.org/)
 * [FluentValidation](https://fluentvalidation.net/)
 * [Polly](https://www.nuget.org/packages/Microsoft.Extensions.Http.Polly/)
 * [NUnit](https://nunit.org/), [FluentAssertions](https://fluentassertions.com/), [Moq](https://github.com/moq)
 * [Serilog](https://serilog.net/), [Destructurama.ByIgnoring](https://www.nuget.org/packages/Destructurama.ByIgnoring/)
-* [Swagger(Swashbuckle)](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-3.1)
+* [Swagger(Swashbuckle)](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-5.0)
 
 # How to use
 
@@ -28,13 +28,13 @@ There are three different ways how to use this template
 
 ## Install template from nuget package
 
-The easiest way to get started is to install the [WebApiClean.Template.Solution](https://www.nuget.org/packages/WebApiClean.Template.Solution) nuget package.
+The easiest way to get started is to install the [WebApiClean.Template.Solution.net5](https://www.nuget.org/packages/WebApiClean.Template.Solution.net5) nuget package.
 
 Use this command to install a new template on your local machine:
-`dotnet new --install WebApiClean.Template.Solution --nuget-source "https://api.nuget.org/v3/index.json"`
+`dotnet new --install WebApiClean.Template.Solution.net5 --nuget-source "https://api.nuget.org/v3/index.json"`
 
 Use this command to generate fresh solution from the template:
-`dotnet new webapiclean -o NewSolutionName`
+`dotnet new webapiclean-net5 -o NewSolutionName`
 
 ## Install template from sources
 
@@ -44,7 +44,7 @@ Use this command to install a new template on your local machine:
 `dotnet new --install path_to_the_sources_root`
 
 Use this command to generate fresh solution from the template:
-`dotnet new webapiclean -o NewSolutionName`
+`dotnet new webapiclean-net5 -o NewSolutionName`
 
 ## Create new solution using rename
 
